@@ -30,7 +30,7 @@ export const Services = () => {
               spacing={6}
               w={isNotSmallerScreen ? '50%' : '100%'}
               m="0"
-              h={isNotSmallerScreen ? '' : '50vh'}
+              // h={isNotSmallerScreen ? '' : '50vh'}
             >
               <Heading
                 fontFamily="body.fraunces"
@@ -91,7 +91,7 @@ export const Services = () => {
               spacing={6}
               w={isNotSmallerScreen ? '50%' : '100%'}
               m="0"
-              h={isNotSmallerScreen ? '' : '50vh'}
+              // h={isNotSmallerScreen ? '' : '50vh'}
             >
               <Heading
                 fontFamily="body.fraunces"
@@ -150,7 +150,7 @@ export const Services = () => {
           spacing={6}
           w={isNotSmallerScreen ? '50%' : '100%'}
           marginInlineStart="0rem !important"
-          h={isNotSmallerScreen ? '' : '50vh'}
+          // h={isNotSmallerScreen ? '' : '50vh'}
         >
           <Heading
             fontFamily="body.fraunces"
@@ -190,11 +190,11 @@ export const Services = () => {
         maxW="1440px"
         margin="auto"
         bg="green.600"
-        h={isNotSmallerScreen ? '600px' : '150vh'}
+        h={isNotSmallerScreen ? '600px' : ''}
       >
         <Stack
           w={isNotSmallerScreen ? '50%' : '100%'}
-          h={isNotSmallerScreen ? '' : '100vh'}
+          h={isNotSmallerScreen ? '' : '600px'}
           marginInlineStart="0rem !important"
           bgImage={isNotSmallerScreen ? cherry : cherryMobile}
           bgSize="cover"
@@ -233,7 +233,7 @@ export const Services = () => {
         </Stack>
         <Stack
           w={isNotSmallerScreen ? '50%' : '100%'}
-          h={isNotSmallerScreen ? '' : '100vh'}
+          h={isNotSmallerScreen ? '' : '600px'}
           marginInlineStart="0rem !important"
           mt={isNotSmallerScreen ? '' : '0px !important'}
           bgImage={isNotSmallerScreen ? mandarine : mandarineMobile}
