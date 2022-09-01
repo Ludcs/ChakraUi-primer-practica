@@ -12,13 +12,11 @@ export const Testimonials = () => {
     <>
       <Stack
         w="100%"
-        // h={isNotSmallerScreen ? '100vh' : ''}
         maxW="1440px"
         margin="auto"
         p={isNotSmallerScreen ? '36' : ''}
         px={isNotSmallerScreen ? '' : '5'}
         py={isNotSmallerScreen ? '' : '20'}
-        // direction={isNotSmallerScreen ? 'row' : 'column'}
       >
         <Heading
           textTransform="uppercase"
