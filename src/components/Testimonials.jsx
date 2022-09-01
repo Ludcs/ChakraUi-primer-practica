@@ -3,26 +3,38 @@ import {Box, Heading, Image, Link, Stack, Text} from '@chakra-ui/react';
 import emily from '../assets/images/users/image-emily.jpg';
 import thomas from '../assets/images/users/image-thomas.jpg';
 import jennie from '../assets/images/users/image-jennie.jpg';
+import {useMediaQuery} from '@chakra-ui/react';
 
 export const Testimonials = () => {
+  const [isNotSmallerScreen] = useMediaQuery('(min-width: 600px)');
+
   return (
     <>
-      <Box w="100%" h="100vh" maxW="1440px" margin="auto" p="36">
+      <Stack
+        w="100%"
+        // h={isNotSmallerScreen ? '100vh' : ''}
+        maxW="1440px"
+        margin="auto"
+        p={isNotSmallerScreen ? '36' : ''}
+        px={isNotSmallerScreen ? '' : '5'}
+        py={isNotSmallerScreen ? '' : '20'}
+        // direction={isNotSmallerScreen ? 'row' : 'column'}
+      >
         <Heading
           textTransform="uppercase"
           fontFamily="body.fraunces"
           color="neutral.grayishblue"
           letterSpacing="5px"
-          fontSize="24px"
+          fontSize={isNotSmallerScreen ? '24px' : '18px'}
           textAlign="center"
         >
           Client Testimonials
         </Heading>
 
         <Stack
-          direction="row"
+          direction={isNotSmallerScreen ? 'row' : 'column'}
           w="100%"
-          h="lg"
+          h={isNotSmallerScreen ? 'lg' : null}
           spacing={'24'}
           justify="center"
           align="center"
@@ -41,6 +53,7 @@ export const Testimonials = () => {
               fontFamily="body.barlow"
               color="neutral.darkgrayishblue"
               textAlign="center"
+              px={isNotSmallerScreen ? '' : '3'}
             >
               We put our trust in Sunnyside and they delivered, making sure our
               needs were met and deadlines were always hit.
@@ -77,6 +90,7 @@ export const Testimonials = () => {
               fontFamily="body.barlow"
               color="neutral.darkgrayishblue"
               textAlign="center"
+              px={isNotSmallerScreen ? '' : '3'}
             >
               Sunnyside's enthusiasm coupled with their keen interest in our
               brand's succes made it a satisfying and enjoyable experience.
@@ -113,6 +127,7 @@ export const Testimonials = () => {
               fontFamily="body.barlow"
               color="neutral.darkgrayishblue"
               textAlign="center"
+              px={isNotSmallerScreen ? '' : '3'}
             >
               Incredible end result! Our sales increased over 400% when we
               worked with Sunnyside. Highly recommended!
@@ -137,7 +152,7 @@ export const Testimonials = () => {
             </Text>
           </Stack>
         </Stack>
-      </Box>
+      </Stack>
     </>
   );
 };

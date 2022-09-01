@@ -3,66 +3,140 @@ import {Heading, Image, Link, Stack, Text} from '@chakra-ui/react';
 import edge from '../assets/images/desktop/image-transform.jpg';
 import cup from '../assets/images/desktop/image-stand-out.jpg';
 import cherry from '../assets/images/desktop/image-graphic-design.jpg';
+import cherryMobile from '../assets/images/mobile/image-graphic-design.jpg';
 import mandarine from '../assets/images/desktop/image-photography.jpg';
+import mandarineMobile from '../assets/images/mobile/image-photography.jpg';
+import {useMediaQuery} from '@chakra-ui/react';
 
 export const Services = () => {
+  const [isNotSmallerScreen] = useMediaQuery('(min-width: 600px)');
+
   return (
     <>
-      <Stack direction="row" w="100%" maxW="1440px" margin="auto">
-        <Stack
-          bg="neutral.white"
-          direction="column"
-          align="flex-start"
-          justify="center"
-          p="24"
-          spacing={6}
-          w="50%"
-          m="0"
-        >
-          <Heading
-            fontFamily="body.fraunces"
-            fontWeight="900"
-            color="neutral.verydarkblue"
-            textAlign="start"
-            w="100%"
-          >
-            Transform your <br /> brand
-          </Heading>
-          <Text
-            fontFamily="body.barlow"
-            color="neutral.verydarkgrayishblue"
-            fontSize="18px"
-          >
-            We are a full-service creative agency specializing in helping brands
-            grow fast. Engage your clients throug compelling visuals that do
-            most of the marketing for you.
-          </Text>
-          <Link
-            fontFamily="body.fraunces"
-            fontWeight="900"
-            color="neutral.verydarkblue"
-            borderBottom="5px solid hsl(51, 100%, 75%)"
-            _hover={{
-              borderBottom: '5px solid hsl(51, 100%, 49%)',
-            }}
-          >
-            LEARN MORE
-          </Link>
-        </Stack>
-        <Stack
-          align="center"
-          justify="center"
-          w="50%"
-          marginInlineStart="0rem !important"
-        >
-          <Image src={edge} objectFit="contain" />
-        </Stack>
+      <Stack
+        direction={isNotSmallerScreen ? 'row' : 'column'}
+        w="100%"
+        maxW="1440px"
+        margin="auto"
+      >
+        {isNotSmallerScreen ? (
+          <>
+            <Stack
+              bg="neutral.white"
+              direction="column"
+              align={isNotSmallerScreen ? 'flex-start' : 'center'}
+              justify="center"
+              p={isNotSmallerScreen ? '24' : '12'}
+              spacing={6}
+              w={isNotSmallerScreen ? '50%' : '100%'}
+              m="0"
+              h={isNotSmallerScreen ? '' : '50vh'}
+            >
+              <Heading
+                fontFamily="body.fraunces"
+                fontWeight="900"
+                color="neutral.verydarkblue"
+                textAlign={isNotSmallerScreen ? 'start' : 'center'}
+                w="100%"
+              >
+                Transform your <br /> brand
+              </Heading>
+              <Text
+                fontFamily="body.barlow"
+                color="neutral.verydarkgrayishblue"
+                fontSize="18px"
+                textAlign={isNotSmallerScreen ? '' : 'center'}
+              >
+                We are a full-service creative agency specializing in helping
+                brands grow fast. Engage your clients throug compelling visuals
+                that do most of the marketing for you.
+              </Text>
+              <Link
+                fontFamily="body.fraunces"
+                fontWeight="900"
+                color="neutral.verydarkblue"
+                borderBottom="5px solid hsl(51, 100%, 75%)"
+                _hover={{
+                  borderBottom: '5px solid hsl(51, 100%, 49%)',
+                }}
+              >
+                LEARN MORE
+              </Link>
+            </Stack>
+            <Stack
+              align="center"
+              justify="center"
+              w={isNotSmallerScreen ? '50%' : '100%'}
+              marginInlineStart="0rem !important"
+            >
+              <Image src={edge} objectFit="contain" />
+            </Stack>
+          </>
+        ) : (
+          <>
+            <Stack
+              align="center"
+              justify="center"
+              w={isNotSmallerScreen ? '50%' : '100%'}
+              marginInlineStart="0rem !important"
+            >
+              <Image src={edge} objectFit="contain" />
+            </Stack>
+            <Stack
+              bg="neutral.white"
+              direction="column"
+              align={isNotSmallerScreen ? 'flex-start' : 'center'}
+              justify="center"
+              p={isNotSmallerScreen ? '24' : '12'}
+              spacing={6}
+              w={isNotSmallerScreen ? '50%' : '100%'}
+              m="0"
+              h={isNotSmallerScreen ? '' : '50vh'}
+            >
+              <Heading
+                fontFamily="body.fraunces"
+                fontWeight="900"
+                color="neutral.verydarkblue"
+                textAlign={isNotSmallerScreen ? 'start' : 'center'}
+                w="100%"
+              >
+                Transform your <br /> brand
+              </Heading>
+              <Text
+                fontFamily="body.barlow"
+                color="neutral.verydarkgrayishblue"
+                fontSize="18px"
+                textAlign={isNotSmallerScreen ? '' : 'center'}
+              >
+                We are a full-service creative agency specializing in helping
+                brands grow fast. Engage your clients throug compelling visuals
+                that do most of the marketing for you.
+              </Text>
+              <Link
+                fontFamily="body.fraunces"
+                fontWeight="900"
+                color="neutral.verydarkblue"
+                borderBottom="5px solid hsl(51, 100%, 75%)"
+                _hover={{
+                  borderBottom: '5px solid hsl(51, 100%, 49%)',
+                }}
+              >
+                LEARN MORE
+              </Link>
+            </Stack>
+          </>
+        )}
       </Stack>
-      <Stack direction="row" w="100%" maxW="1440px" margin="auto">
+      <Stack
+        direction={isNotSmallerScreen ? 'row' : 'column'}
+        w="100%"
+        maxW="1440px"
+        margin="auto"
+      >
         <Stack
           align="center"
           justify="center"
-          w="50%"
+          w={isNotSmallerScreen ? '50%' : '100%'}
           marginInlineStart="0rem !important"
         >
           <Image src={cup} />
@@ -70,18 +144,19 @@ export const Services = () => {
         <Stack
           bg="neutral.white"
           direction="column"
-          align="flex-start"
+          align={isNotSmallerScreen ? 'flex-start' : 'center'}
           justify="center"
-          p="24"
+          p={isNotSmallerScreen ? '24' : '12'}
           spacing={6}
-          w="50%"
+          w={isNotSmallerScreen ? '50%' : '100%'}
           marginInlineStart="0rem !important"
+          h={isNotSmallerScreen ? '' : '50vh'}
         >
           <Heading
             fontFamily="body.fraunces"
             fontWeight="900"
             color="neutral.verydarkblue"
-            textAlign="start"
+            textAlign={isNotSmallerScreen ? 'start' : 'center'}
             w="100%"
           >
             Stand out to the right <br /> audience
@@ -90,6 +165,7 @@ export const Services = () => {
             fontFamily="body.barlow"
             color="neutral.verydarkgrayishblue"
             fontSize="18px"
+            textAlign={isNotSmallerScreen ? '' : 'center'}
           >
             Using a collaborative formula of designers, researchers,
             photographers, videographers, and copywriters, we'll build and
@@ -109,18 +185,19 @@ export const Services = () => {
         </Stack>
       </Stack>
       <Stack
-        direction="row"
+        direction={isNotSmallerScreen ? 'row' : 'column'}
         w="100%"
         maxW="1440px"
         margin="auto"
         bg="green.600"
-        h="600px"
+        h={isNotSmallerScreen ? '600px' : '150vh'}
       >
         <Stack
-          w="50%"
+          w={isNotSmallerScreen ? '50%' : '100%'}
+          h={isNotSmallerScreen ? '' : '100vh'}
           marginInlineStart="0rem !important"
-          bgImage={cherry}
-          bgSize="auto"
+          bgImage={isNotSmallerScreen ? cherry : cherryMobile}
+          bgSize="cover"
           bgRepeat="no-repeat"
           bgPosition="top"
         >
@@ -130,9 +207,9 @@ export const Services = () => {
             h="100%"
             align="center"
             justify="end"
-            px="40"
-            pb="14"
-            spacing={8}
+            px="8"
+            pb={isNotSmallerScreen ? '14' : '10'}
+            spacing={isNotSmallerScreen ? '8' : '4'}
           >
             <Heading
               fontFamily="body.fraunces"
@@ -155,10 +232,12 @@ export const Services = () => {
           </Stack>
         </Stack>
         <Stack
-          w="50%"
+          w={isNotSmallerScreen ? '50%' : '100%'}
+          h={isNotSmallerScreen ? '' : '100vh'}
           marginInlineStart="0rem !important"
-          bgImage={mandarine}
-          bgSize="auto"
+          mt={isNotSmallerScreen ? '' : '0px !important'}
+          bgImage={isNotSmallerScreen ? mandarine : mandarineMobile}
+          bgSize="cover"
           bgRepeat="no-repeat"
           bgPosition="top"
         >
@@ -168,9 +247,9 @@ export const Services = () => {
             h="100%"
             align="center"
             justify="end"
-            px="40"
-            pb="14"
-            spacing={8}
+            px="8"
+            pb={isNotSmallerScreen ? '14' : '10'}
+            spacing={isNotSmallerScreen ? '8' : '4'}
           >
             <Heading
               fontFamily="body.fraunces"
